@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
+<div layout:fragment="content">
+  <div class="modal-body" style="margin : auto auto;width : 50%;font-weight: bold">
+    <form th:action="${'/add-request'}" method="post">
+      <div class="form-group">
+        <label for="fio" class="col-form-label">ФИО : </label>
+        <input type="text" class="form-control" id="fio" name="fio" placeholder="ФИО">
+      </div>
+      <div class="form-group">
+        <label for="course" class="col-form-label">Курс :</label>
+        <select class="custom-select" id="course" name="course">
+          <option selected th:text="${'Выберите курс'}">
+          <option th:text="${'Java Core'}" th:value="${'Java Core'}"></option>
+          <option th:text="${'UX/UI'}" th:value="${'UX/UI'}"></option>
+          <option th:text="${'Python for kids'}" th:value="${'Python for kids'}"></option>
+          <option th:text="${'Java Pro'}" th:value="${'Java Pro'}"></option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="col-form-label">Телефон :</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="+7(7__)_______">
+      </div>
+      <div class="form-group">
+        <label for="comment" class="col-form-label">Комментарии :</label>
+        <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="Комментарии"></textarea>
+      </div>
+      <button style="font-weight: bold" th:text="${'Добавить заявку'}" class="btn btn-success"></button>
+    </form>
+  </div>
+</div>
+</html>
